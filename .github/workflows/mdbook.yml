@@ -42,6 +42,21 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with mdBook
         run: mdbook build
+      - name: Generate sitemap.xml and robots.txt
+        run: |
+          BASE="https://tannenwaddy.github.io/Egui-cn-guide"
+          echo "User-agent: *" > book/robots.txt
+          echo "Allow: /" >> book/robots.txt
+          echo "Sitemap: $BASE/sitemap.xml" >> book/robots.txt
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > book/sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> book/sitemap.xml
+          for f in book/*.html; do
+            page=$(basename "$f")
+            [ "$page" = "404.html" ] && continue
+            echo "  <url><loc>$BASE/$page</loc><lastmod>$(date -u +%Y-%m-%d)</lastmod></url>" >> book/sitemap.xml
+          done
+          echo '</urlset>' >> book/sitemap.xml
+          cat book/sitemap.xml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
