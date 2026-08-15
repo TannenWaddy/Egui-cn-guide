@@ -6,3 +6,4 @@ language = "zn_CN"
 [output.html]
 git-repository-url = "https://github.com/TannenWaddy/Egui-cn-guide"
 site-url = "https://tannenwaddy.github.io/Egui-cn-guide/"
+additional-css = ["theme/css/jetbrains-mono.css"]
