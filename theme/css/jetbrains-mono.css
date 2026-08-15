@@ -1,0 +1,21 @@
+/* JetBrains Mono 字体 - 用于代码块 */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+    --mono-font: "JetBrains Mono", "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace;
+}
+
+code,
+pre,
+.code-title,
+.code-tooltip,
+.ace_editor {
+    font-family: "JetBrains Mono", "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace !important;
+}
+
+/* 确保代码块行高适合 JetBrains Mono */
+pre code {
+    line-height: 1.6;
+    font-feature-settings: "liga" 1, "calt" 1;
+}
