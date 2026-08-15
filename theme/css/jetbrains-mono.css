@@ -1,9 +1,27 @@
-/* JetBrains Mono 字体 - 用于代码块 */
+/* JetBrains Mono 字体 - 主字体 */
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('JetBrains Mono Regular'),
+         local('JetBrainsMono-Regular'),
+         url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
+}
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+/* HarmonyOS Sans SC - 回滚字体 */
+@font-face {
+    font-family: 'HarmonyOS Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('HarmonyOS Sans SC Regular'),
+         local('HarmonyOS Sans SC'),
+         url('../fonts/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
+}
 
 :root {
-    --mono-font: "JetBrains Mono", "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace;
+    --mono-font: "JetBrains Mono", "HarmonyOS Sans SC", "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace;
 }
 
 code,
@@ -11,11 +29,10 @@ pre,
 .code-title,
 .code-tooltip,
 .ace_editor {
-    font-family: "JetBrains Mono", "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace !important;
+    font-family: "JetBrains Mono", "HarmonyOS Sans SC", "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace !important;
+    font-feature-settings: "liga" 1, "calt" 1;
 }
 
-/* 确保代码块行高适合 JetBrains Mono */
 pre code {
     line-height: 1.6;
-    font-feature-settings: "liga" 1, "calt" 1;
 }
