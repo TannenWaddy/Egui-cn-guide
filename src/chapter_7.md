@@ -41,6 +41,7 @@ egui::CentralPanel::default().show(ui, |ui| {
 - 第一个参数是 id（字符串），用来记住用户拖动后的宽度。
 - `resizable(true)` 让用户能拖动边缘改宽度。
 - **添加顺序很重要**：先加的面板在外层，最后加的在最里。`CentralPanel` 永远最后。
+- **拖拽打开**：完全折叠的面板会在固定边缘留下一个细小的拖拽手柄，鼠标悬停时可见。拖拽手柄超过 `min_size`（或双击）可以重新打开面板。使用 `panel.drag_to_open(false)` 可以禁用此功能。
 
 ## 7.3 TopBottomPanel：上下面板
 
@@ -88,6 +89,7 @@ egui::Window::new("设置")
 - `.title_bar(true/false)`：要不要标题栏。
 - `.drag_area(WindowDrag::TitleBar)`：从哪里拖动窗口。`OnTouch`（默认）是触摸屏任意位置拖、桌面只从标题栏拖。
 - `.frame(Frame::none())`：自定义边框。
+- `.title_frame(Frame::none())`：自定义标题栏边框（与内容区域边框分开设置）。
 - `.current_pos(pos)` / `.current_size(size)`：程序控制位置。
 - `.order(Order::Foreground)`：层级。
 - `.id(Id::new(...))`：手动指定 ID（同名多窗口必须）。

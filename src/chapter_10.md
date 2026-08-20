@@ -120,12 +120,14 @@ style.spacing.item_spacing = egui::vec2(10.0, 6.0);
 style.spacing.button_padding = egui::vec2(12.0, 4.0);
 style.spacing.indent = 24.0;
 style.spacing.scroll_bar_width = 12.0;
+style.spacing.extra_text_line_spacing = 4.0; // 文本行之间的额外垂直间距
 ctx.set_style(style);
 ```
 
 `Style` 包含：
 
 - `spacing: Spacing`：间距、控件高度、缩进等。
+  - `extra_text_line_spacing: f32`：文本行之间的额外垂直间距，用于改善文本可读性。
 - `visuals: Visuals`：颜色（暗色/亮色主题、控件颜色）。
 - `text_styles: HashMap<TextStyle, FontId>`：每种文本样式的字号字体。
 - `animation_time: f32`：动画时长。
@@ -233,11 +235,25 @@ impl eframe::App for MyApp {
 
 `ctx.set_visuals` 立刻生效，下一帧就用新主题。
 
-## 10.12 持久化样式
+## 10.12 窗口主题同步
+
+egui 支持将原生窗口主题与 egui 主题同步。当启用此功能时，egui 会自动将原生窗口装饰（标题栏、边框等）与 egui 主题保持一致。
+
+```rust
+// 启用窗口主题同步（默认启用）
+ctx.options_mut(|o| o.sync_window_theme = true);
+
+// 禁用窗口主题同步（如果你想自己管理原生窗口主题）
+ctx.options_mut(|o| o.sync_window_theme = false);
+```
+
+此功能在多视口（多窗口）场景下也有效。
+
+## 10.13 持久化样式
 
 如果你想让用户自定义的样式下次打开还在，把 `Style` 存到 `App` 里，并通过 `eframe::App::save` 持久化（需要开 `persistence` feature）。`egui` 内部也会自动把样式写入 `Memory`，但仅同一进程内。
 
-## 10.13 小结
+## 10.14 小结
 
 | 想改什么 | 怎么改 |
 |---|---|
@@ -246,6 +262,8 @@ impl eframe::App for MyApp {
 | 全局字号 | `style.text_styles.insert(TextStyle::Body, FontId::new(18.0, ...))` |
 | 局部字号 | `RichText::new(s).size(20.0)` |
 | 间距 | `style.spacing.item_spacing = ...` |
+| 文本行间距 | `style.spacing.extra_text_line_spacing = 4.0` |
 | 暗/亮主题 | `ctx.set_visuals(Visuals::dark() / light())` |
 | 选中色 | `style.visuals.selection.bg_fill = ...` |
 | 自定义控件颜色 | `style.interact(&response)` 拿 `WidgetVisuals` |
+| 窗口主题同步 | `ctx.options_mut(\|o\| o.sync_window_theme = true/false)` |

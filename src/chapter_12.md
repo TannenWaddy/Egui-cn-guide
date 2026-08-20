@@ -123,9 +123,9 @@ egui::ViewportBuilder::default()
 
 ```toml
 [dependencies]
-eframe = { version = "0.32", default-features = false, features = ["glow"] }   # 用 OpenGL
+eframe = { version = "0.36", default-features = false, features = ["glow"] }   # 用 OpenGL
 # 或
-eframe = { version = "0.32", default-features = false, features = ["wgpu"] }   # 用 wgpu
+eframe = { version = "0.36", default-features = false, features = ["wgpu"] }   # 用 wgpu
 ```
 
 `NativeOptions::renderer` 显式指定（如果两个都开了）。

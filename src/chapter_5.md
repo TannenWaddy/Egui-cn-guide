@@ -153,6 +153,8 @@ ui.add(egui::DragValue::new(&mut v).speed(0.1).range(0.0..=100.0).prefix("v="));
 
 按住 `Ctrl` 拖动可以更慢（更精细）。双击可以输入数字。
 
+**行为说明**：当 DragValue 获得焦点时（处于文本编辑模式），如果外部代码修改了值，DragValue 不会回滚到之前的值。这意味着你可以在 DragValue 获得焦点时安全地通过其他方式修改值。
+
 ## 5.7 TextEdit（文本框）
 
 详见 [第八章](./chapter_8.md)。这里只放最常用形式：

@@ -18,8 +18,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-eframe = "0.32"      # 版本号按你本地 egui 源码的版本填
-egui = "0.32"
+eframe = "0.36"      # 版本号按你本地 egui 源码的版本填
+egui = "0.36"
 env_logger = "0.11"
 ```
 
