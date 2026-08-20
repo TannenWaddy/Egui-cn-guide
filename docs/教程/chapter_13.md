@@ -226,7 +226,7 @@ ui.painter().add(egui::Shape::callback(egui::Rect::from_min_size(pos, size), mov
 - **更纱黑体**（Sarasa Gothic）：等宽中文，适合代码编辑器。
 - **Noto Sans CJK**：Google 版的思源。
 
-加载方法见 [第十章](./chapter_10.md#102-加中文字体)。
+加载方法见 [第十章](chapter_10.md02-加中文字体)。
 
 ## 13.12 常见错误
 

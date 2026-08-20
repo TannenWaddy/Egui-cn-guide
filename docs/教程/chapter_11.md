@@ -102,7 +102,7 @@ ui.add(toggle(&mut enabled));
 
 在当前 `Ui` 里申请一块固定大小的空间，返回这块的矩形（屏幕绝对坐标）和交互响应。
 
-`Sense::click()` 表示这块区域感知点击。其它选项见 [第四章](./chapter_4.md#45-sense控件感知什么交互)。
+`Sense::click()` 表示这块区域感知点击。其它选项见 [第四章](chapter_4.md#45-sense控件感知什么交互)。
 
 ### `ui.allocate_ui(size, |ui| ...) -> InnerResponse<R>`
 

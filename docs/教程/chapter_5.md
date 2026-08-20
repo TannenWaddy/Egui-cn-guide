@@ -157,7 +157,7 @@ ui.add(egui::DragValue::new(&mut v).speed(0.1).range(0.0..=100.0).prefix("v="));
 
 ## 5.7 TextEdit（文本框）
 
-详见 [第八章](./chapter_8.md)。这里只放最常用形式：
+详见 [第八章](chapter_8.md)。这里只放最常用形式：
 
 ```rust
 let mut s = String::new();
@@ -185,7 +185,7 @@ ui.add(egui::Hyperlink::from_label_and_url("点击这里", "https://example.com"
 
 ## 5.9 Image（图片）
 
-详见 [第九章](./chapter_9.md)。最短用法：
+详见 [第九章](chapter_9.md)。最短用法：
 
 ```rust
 ui.image(egui::include_image!("assets/ferris.png"));
