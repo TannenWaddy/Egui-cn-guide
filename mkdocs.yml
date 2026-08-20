@@ -80,7 +80,3 @@ markdown_extensions:
 
 plugins:
   - search
-  - sitemap:
-      url_template: https://tannenwaddy.github.io/Egui-cn-guide/{page}
-      changefreq: weekly
-      priority: 0.5
