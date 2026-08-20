@@ -58,7 +58,7 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/TannenWaddy/Egui-cn-guide
+      link: https://github.com/TannenWaddy
       name: GitHub
 
 markdown_extensions:
