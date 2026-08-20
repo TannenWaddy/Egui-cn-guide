@@ -1,6 +1,6 @@
 # Egui 中文指南
 
-这是一个关于 egui 的中文教程项目，使用 [mdBook](https://rust-lang.github.io/mdBook/) 构建静态网站。
+这是一个关于 egui 的中文教程项目，使用 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) 构建静态网站。
 
 ## 项目介绍
 
@@ -20,9 +20,10 @@ egui是一个用纯 Rust 编写的即时模式 GUI 库，具有以下特点：
 
 ```
 Egui中文指南/
-├── book.toml          # mdBook 配置文件
-├── src/               # Markdown 源文件目录
-│   ├── SUMMARY.md     # 目录结构定义
+├── mkdocs.yml         # MkDocs 配置文件
+├── docs/              # Markdown 源文件目录
+│   ├── stylesheets/   # 自定义样式
+│   │   └── extra.css
 │   ├── chapter_1.md   # 第一章 认识 egui
 │   ├── chapter_2.md   # 第二章 快速开始
 │   ├── chapter_3.md   # 第三章 即时模式 GUI
@@ -36,18 +37,18 @@ Egui中文指南/
 │   ├── chapter_11.md  # 第十一章 自定义控件
 │   ├── chapter_12.md  # 第十二章 eframe 与后端集成
 │   └── chapter_13.md  # 第十三章 实战技巧与常见问题
-└── book/              # 构建输出目录（已自动生成）
+└── site/              # 构建输出目录（已自动生成）
 ```
 
 ## 构建方式
 
 ### 前置条件
 
-1. 安装 Rust 和 Cargo
-2. 安装 mdBook：
+1. 安装 Python 3.x
+2. 安装 MkDocs Material：
 
 ```bash
-cargo install mdbook
+pip install mkdocs-material
 ```
 
 ### 构建步骤
@@ -62,18 +63,18 @@ cd Egui-cn-guide
 2. 构建静态网站：
 
 ```bash
-mdbook build
+mkdocs build
 ```
 
-构建完成后，静态文件将输出到 `book/` 目录。
+构建完成后，静态文件将输出到 `site/` 目录。
 
 3. 本地预览：
 
 ```bash
-mdbook serve
+mkdocs serve
 ```
 
-启动本地服务器，默认地址为 `http://localhost:3000`。
+启动本地服务器，默认地址为 `http://localhost:8000`。
 
 ### 部署到 GitHub Pages
 
@@ -104,7 +105,7 @@ mdbook serve
 
 - [egui 官方仓库](https://github.com/emilk/egui)
 - [egui 官方文档](https://docs.rs/egui)
-- [mdBook 官方文档](https://rust-lang.github.io/mdBook/)
+- [MkDocs Material 官方文档](https://squidfunk.github.io/mkdocs-material/)
 - [eframe 官方文档](https://docs.rs/eframe)
 
 ## 许可证

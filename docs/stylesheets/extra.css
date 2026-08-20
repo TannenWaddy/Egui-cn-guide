@@ -1,0 +1,36 @@
+/* JetBrains Mono 字体 - 主字体 */
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('JetBrains Mono Regular'),
+         local('JetBrainsMono-Regular'),
+         url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono@latest/fonts/webfonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+/* HarmonyOS Sans SC - 回滚字体 */
+@font-face {
+    font-family: 'HarmonyOS Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('HarmonyOS Sans SC Regular'),
+         local('HarmonyOS Sans SC');
+}
+
+:root {
+    --md-code-font: "JetBrains Mono", "HarmonyOS Sans SC";
+}
+
+code,
+pre,
+.md-typeset code,
+.md-typeset pre {
+    font-family: var(--md-code-font) !important;
+    font-feature-settings: "liga" 1, "calt" 1;
+}
+
+.md-typeset pre code {
+    line-height: 1.6;
+}
