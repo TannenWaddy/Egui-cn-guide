@@ -1,7 +1,7 @@
 site_name: Egui中文指南
 site_url: https://tannenwaddy.github.io/Egui-cn-guide/
-site_description: Egui 中文教程 - 从入门到实战
-site_author: Egui中文指南
+site_description: Egui中文指南
+site_author: TannenWaddy
 
 repo_name: TannenWaddy/Egui-cn-guide
 repo_url: https://github.com/TannenWaddy/Egui-cn-guide
@@ -80,3 +80,7 @@ markdown_extensions:
 
 plugins:
   - search
+  - sitemap:
+      url_template: https://tannenwaddy.github.io/Egui-cn-guide/{page}
+      changefreq: weekly
+      priority: 0.5
